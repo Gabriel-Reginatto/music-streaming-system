@@ -22,10 +22,17 @@ public class User {
         return email;
     }
 
-    public void addplayList(PlayList playList) {
+    public void addPlayList(PlayList playList) {
         if (playList == null) {
             throw new IllegalArgumentException("Playlist cannot be null");
         }
         playLists.add(playList);
+    }
+
+    public boolean removePlayList(PlayList playList) {
+        if (playList == null) {
+            throw new IllegalArgumentException("Playlist cannot be null");
+        }
+        return playLists.remove(playList);
     }
 }
