@@ -1,9 +1,12 @@
 package service;
 
+import model.Genre;
 import model.Media;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Catalog {
     private List<Media> mediaList;
@@ -37,4 +40,17 @@ public class Catalog {
         }
         return results;
     }
+
+    public Map<Genre, Integer> countByGenre() {
+        Map<Genre, Integer> genreCount = new HashMap<>();
+
+        for (Media media : mediaList) {
+            Genre genre = media.getGenre();
+            genreCount.put(genre, genreCount.getOrDefault(genre, 0) + 1);
+        }
+
+        return genreCount;
+    }
+
+
 }
