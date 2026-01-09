@@ -23,6 +23,18 @@ public class Catalog {
         List<String> titles = new ArrayList<>();
         for (Media media : mediaList) {
             titles.add(media.getTitle());
-    }
+        }
         return titles;
+    }
+
+    public List<Media> searcByTitle(String title) {
+        List<Media> results = new ArrayList<>();
+
+        for (Media media: mediaList) {
+            if (media.getTitle().equalsIgnoreCase(title)) {
+                results.add(media);
+            }
+        }
+        return results;
+    }
 }
