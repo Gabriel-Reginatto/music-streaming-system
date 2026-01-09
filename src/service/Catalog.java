@@ -18,4 +18,11 @@ public class Catalog {
         }
         mediaList.add(media);
     }
+
+    public List<String> listAllTitles() {
+        List<String> titles = new ArrayList<>();
+        for (Media media : mediaList) {
+            titles.add(media.getTitle());
+    }
+        return titles;
 }
