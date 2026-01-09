@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class User {
@@ -34,5 +35,9 @@ public class User {
             throw new IllegalArgumentException("Playlist cannot be null");
         }
         return playLists.remove(playList);
+    }
+
+    public List<PlayList> getPlayLists() {
+        return Collections.unmodifiableList(playLists);
     }
 }
