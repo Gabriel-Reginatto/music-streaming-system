@@ -52,7 +52,35 @@ public class UserMenu {
          System.out.println("Erro: email não encontrado. Tente novamente.");
          return null;
      }
-
  }
 
+    public void showMenu() {
+     while (true) {
+         System.out.println("=== MiniSpotify ===");
+         System.out.println("1. Criar conta");
+         System.out.println("2. Login");
+         System.out.println("3. Sair");
+         System.out.println("Escolha uma opção: ");
+
+         String choice = scanner.nextLine();
+
+         switch (choice) {
+             case "1":
+                 createUser();
+                 break;
+             case "2":
+                 User loggedUser = loginUser();
+                 if (loggedUser != null) {
+                     System.out.println("Você está logado como: " + loggedUser.getName());
+                 }
+                 break;
+             case "3":
+                 System.out.println("Saindo.... Até logo!");
+                 return;
+             default:
+                 System.out.println("Opção inválida! Tente novamente.");
+         }
+     }
+
+    }
 }
