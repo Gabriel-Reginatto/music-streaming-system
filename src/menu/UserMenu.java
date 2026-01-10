@@ -35,4 +35,24 @@ public class UserMenu {
      System.out.println("Conta criada com sucesso!");
  }
 
+ public User loginUser() {
+     System.out.println("=== Login ===");
+
+     System.out.println("Digite seu email: ");
+     var email = scanner.nextLine().toLowerCase();
+
+     User tempUser = new User("", email);
+
+     if (users.contains(tempUser)) {
+         int index = users.indexOf(tempUser);
+         User loggedUser = users.get(index);
+         System.out.println("Login realizado com sucesso! Bem-vindo(a) " + loggedUser);
+         return loggedUser;
+     } else {
+         System.out.println("Erro: email não encontrado. Tente novamente.");
+         return null;
+     }
+
+ }
+
 }
